@@ -1,0 +1,16 @@
+private static CLASSNAME _instance;
+public static CLASSNAME Instance {
+    get {
+        return _instance;
+    }
+}
+
+private void Awake()
+{
+    if (_instance != null && _instance != this)
+    {
+        Destroy(this.gameObject);
+    } else {
+        _instance = this;
+    }
+}
